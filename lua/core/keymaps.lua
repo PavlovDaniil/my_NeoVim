@@ -12,3 +12,9 @@ map("n", "<leader>ff", ":Telescope find_files<CR>", { noremap = true, silent = t
 map("n", "<leader>fg", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 map("n", "<leader>fb", ":Telescope buffers<CR>", { noremap = true, silent = true })
 map("n", "<leader>fh", ":Telescope help_tags<CR>", { noremap = true, silent = true })
+
+-- Codium
+vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
